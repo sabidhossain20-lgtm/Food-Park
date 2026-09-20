@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Food Park — Feel Your Power of Taste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#120905;--card:#24120a;--gold:#ffc21a;--text:#fff;--muted:#d8c2ac;--line:#704718}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text)}a{text-decoration:none;color:inherit}img{width:100%;height:100%;object-fit:cover;display:block}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(8,5,3,.95);backdrop-filter:blur(12px);border-bottom:1px solid #4e3218}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;gap:10px;align-items:center}.logo{width:48px;height:48px;border:3px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:24px}.brand b{font-size:21px}.brand b span{color:var(--gold)}.tag{font-size:10px;color:#d9c4af}.links{display:flex;gap:24px;font-size:13px;font-weight:800}.links a:hover{color:var(--gold)}.links .active{background:var(--gold);color:#170b05;padding:10px 17px;border-radius:10px}.wa{background:#0db04d;padding:11px 15px;border-radius:11px;font-weight:800;font-size:13px}.wa small{display:block}.hamb{display:none;background:none;color:#fff;border:0;font-size:27px}
+.hero{height:540px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.slide{position:absolute;inset:0;opacity:0;transition:.7s}.slide.active{opacity:1}.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,4,2,.95),rgba(9,4,2,.65) 43%,rgba(9,4,2,.12))}.hero .wrap{height:100%;display:flex;align-items:center;position:relative;z-index:2}.copy{max-width:590px}.eyebrow{font:italic 24px "Playfair Display";color:var(--gold)}h1{font:800 68px/1 "Playfair Display";margin:10px 0}h1 span{color:var(--gold)}.copy p{color:#eee;line-height:1.6;max-width:510px;margin:18px 0 25px}.btn{display:inline-block;background:var(--gold);color:#180b04;padding:13px 21px;border-radius:12px;font-weight:800}.arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #8b5c23;background:#0007;color:#fff;font-size:25px}.left{left:22px}.right{right:22px}.dots{position:absolute;z-index:4;bottom:18px;left:0;right:0;text-align:center}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#aaa;border:0;margin:4px}.dot.active{background:var(--gold)}
+section{padding:65px 0}.title{text-align:center;margin-bottom:30px}.title small{color:var(--gold);font-weight:800;letter-spacing:2px}.title h2{font:700 38px "Playfair Display";margin:6px}.title p{color:var(--muted)}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.cat{height:175px;border:1px solid #86551d;border-radius:15px;overflow:hidden;position:relative}.cat:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#100603e8)}.cat div{position:absolute;z-index:2;bottom:15px;left:16px;right:16px;display:flex;justify-content:space-between;font-weight:800;font-size:18px}.circle{background:#fff;color:#1a0a04;border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
+.dark{background:linear-gradient(#160a06,#1c0c07);border-top:1px solid #4e3218}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.grid.five{grid-template-columns:repeat(5,1fr)}.card{background:var(--card);border:1px solid #79501d;border-radius:14px;overflow:hidden;transition:.3s}.card:hover{transform:translateY(-6px);border-color:var(--gold)}.pic{height:185px;position:relative}.badge{position:absolute;z-index:2;top:10px;left:10px;background:var(--gold);color:#170a03;padding:5px 9px;border-radius:20px;font-size:10px;font-weight:900}.body{text-align:center;padding:13px 12px 16px}.body h3{font-size:15px;min-height:38px}.price{font-size:13px;line-height:1.45;min-height:38px}.order{display:inline-block;margin-top:9px;background:var(--gold);color:#160a04;border-radius:20px;padding:8px 14px;font-size:12px;font-weight:900}
+.feature{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:center}.feature-img{height:420px;border-radius:20px;overflow:hidden;border:1px solid #754a1d}.feature h2{font:700 50px/1.05 "Playfair Display";margin:10px 0}.feature h2 span{color:var(--gold)}.feature p{color:var(--muted);line-height:1.7;margin:12px 0}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #63431d;border-radius:16px;overflow:hidden}.stat{text-align:center;padding:25px;border-right:1px solid #4e341b}.stat:last-child{border:0}.stat b{color:var(--gold);font-size:25px;display:block}
+.contact{border-top:1px solid #744a1d;border-bottom:1px solid #744a1d;background:linear-gradient(100deg,#170905,#2a1207)}.contact-row{display:flex;align-items:center;justify-content:space-between;gap:25px}.phone{font-size:32px;color:var(--gold);font-weight:900}
+footer{padding:28px 0;background:#080403;border-top:1px solid #3b2818}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px}.foot small{color:#9f8d7b}.footlinks{display:flex;gap:18px;font-size:12px;color:#cdb9a5}
+.float{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:#10b84e;display:grid;place-items:center;font-size:25px;box-shadow:0 8px 30px #0008}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:1000px){.links{gap:12px}.grid.five{grid-template-columns:repeat(3,1fr)}.cats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.nav{height:68px}.hamb{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;background:#0b0603;padding:18px 6%;flex-direction:column}.links.open{display:flex}.nav>.wa{display:none}h1{font-size:48px}.hero{height:570px}.arrow{display:none}.grid,.grid.five{grid-template-columns:repeat(2,1fr)}.feature{grid-template-columns:1fr}.feature-img{height:300px}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #4e341b}.contact-row{flex-direction:column;align-items:flex-start}.phone{font-size:27px}.foot{flex-direction:column;align-items:flex-start}}
+@media(max-width:500px){.cats,.grid,.grid.five{grid-template-columns:1fr}.brand b{font-size:18px}.title h2{font-size:31px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#home"><div class="logo">🍔</div><div><b>FOOD <span>PARK</span></b><div class="tag">Feel Your Power of Taste</div></div></a>
+<button class="hamb">☰</button>
+<nav class="links"><a class="active" href="#home">Home</a><a href="#cakes">Cake</a><a href="#bakery">Bakery</a><a href="#chocolate">Chocolate</a><a href="#bao">Bao Bun & Roll</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<a class="wa" href="https://wa.me/8801531783026" target="_blank">◉ Order on WhatsApp<small>01531783026</small></a>
+</div></header>
+
+<main id="home">
+<div class="hero">
+<div class="slide active"><img src="hero-cake.jpg" alt="Cake"><div class="wrap"><div class="copy"><div class="eyebrow">Fresh • Tasty • Homemade</div><h1>Delicious Food<br><span>for Every Mood</span></h1><p>Cakes, Bakery, Chocolates, Bao Bun & Rolls — all in one place. Freshly made with love.</p><a class="btn" href="https://wa.me/8801531783026" target="_blank">◉ Order Now</a></div></div></div>
+<div class="slide"><img src="hero-bakery.jpg" alt="Bakery"><div class="wrap"><div class="copy"><div class="eyebrow">Fresh from the Oven</div><h1>Made Fresh,<br><span>Made With Love</span></h1><p>Crispy rolls, mini pizzas, bao buns and delicious bakery treats.</p><a class="btn" href="#bakery">Explore Bakery →</a></div></div></div>
+<div class="slide"><img src="hero-chocolate.jpg" alt="Chocolate"><div class="wrap"><div class="copy"><div class="eyebrow">Pure Chocolate Happiness</div><h1>Sweet Moments,<br><span>Beautiful Memories</span></h1><p>Chocolate cakes, kunafa, pudding and custom chocolates for every celebration.</p><a class="btn" href="#chocolate">See Chocolate →</a></div></div></div>
+<button class="arrow left" onclick="slide(-1)">‹</button><button class="arrow right" onclick="slide(1)">›</button><div class="dots"><button class="dot active" onclick="go(0)"></button><button class="dot" onclick="go(1)"></button><button class="dot" onclick="go(2)"></button></div>
+</div>
+
+<section class="wrap reveal"><div class="title"><small>OUR MENU</small><h2>Choose Your Favorite</h2><p>Order directly through WhatsApp.</p></div>
+<div class="cats">
+<a class="cat" href="#cakes"><img src="category-cakes.jpg" alt="Cakes"><div>Cakes <span class="circle">›</span></div></a>
+<a class="cat" href="#bakery"><img src="category-bakery.jpg" alt="Bakery"><div>Bakery <span class="circle">›</span></div></a>
+<a class="cat" href="#chocolate"><img src="category-chocolate.jpg" alt="Chocolate"><div>Chocolate <span class="circle">›</span></div></a>
+<a class="cat" href="#bao"><img src="category-bao.jpg" alt="Bao Bun & Roll"><div>Bao Bun & Roll <span class="circle">›</span></div></a>
+</div></section>
+
+<section id="cakes" class="dark reveal"><div class="wrap"><div class="title"><small>SWEET MOMENTS</small><h2>Cakes</h2><p>Soft, fresh & full of love</p></div><div class="grid">
+
+<article class="card"><div class="pic"><span class="badge">POPULAR</span><img src="vanilla-cake.jpg" alt="Vanilla Cake"></div><div class="body"><h3>Vanilla Cake</h3><div class="price">550 Tk / Pound</div><a class="order" href="https://wa.me/8801531783026?text=Vanilla%20Cake" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><span class="badge">BEST SELLER</span><img src="chocolate-cake.jpg" alt="Chocolate Cake"></div><div class="body"><h3>Chocolate Cake</h3><div class="price">650 Tk / Pound</div><a class="order" href="https://wa.me/8801531783026?text=Chocolate%20Cake" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><img src="dream-cake.jpg" alt="Dream Cake"></div><div class="body"><h3>Dream Cake</h3><div class="price">500ml — 250 Tk<br>1000ml — 500 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Dream%20Cake" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><span class="badge">SPECIAL</span><img src="pistachio-kunafa-cake.jpg" alt="Pistachio Kunafa Chocolate Cake"></div><div class="body"><h3>Pistachio Kunafa Chocolate Cake</h3><div class="price">500ml — 500 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Pistachio%20Kunafa%20Chocolate%20Cake" target="_blank">◉ Order Now</a></div></article>
+
+</div></div></section>
+
+<section id="bakery" class="dark reveal"><div class="wrap"><div class="title"><small>FRESHLY BAKED</small><h2>Bakery Items</h2><p>Crispy, fresh & always special</p></div><div class="grid">
+<article class="card"><div class="pic"><img src="bombay-halwa.jpg" alt="Bombay Halwa"></div><div class="body"><h3>Bombay Halwa</h3><div class="price">1/2 Kg — 450 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Bombay%20Halwa" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><img src="mini-pizza.jpg" alt="Mini Pizza"></div><div class="body"><h3>Mini Pizza</h3><div class="price">5 inch — 100 Tk / Piece<br>Minimum 2 Pieces</div><a class="order" href="https://wa.me/8801531783026?text=Mini%20Pizza%20-%202%20pieces" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><img src="bao-bun.jpg" alt="Bao Bun"></div><div class="body"><h3>Bao Bun</h3><div class="price">2 Pieces Box — 160 Tk<br>Extra Mayonnaise Included</div><a class="order" href="https://wa.me/8801531783026?text=Bao%20Bun" target="_blank">◉ Order Now</a></div></article>
+<article class="card"><div class="pic"><img src="chicken-roll.jpg" alt="Chicken Roll"></div><div class="body"><h3>Chicken Roll</h3><div class="price">30 Tk / Piece</div><a class="order" href="https://wa.me/8801531783026?text=Chicken%20Roll" target="_blank">◉ Order Now</a></div></article>
+</div></div></section>
+
+<section id="chocolate" class="dark reveal"><div class="wrap"><div class="title"><small>PURE CHOCOLATE HAPPINESS</small><h2>Chocolate Items</h2><p>For the true chocolate lovers</p></div><div class="grid five">
+<article class="card"><div class="pic"><img src="pistachio-mini-kunafa.jpg" alt="Pistachio Mini Kunafa Chocolate"></div><div class="body"><h3>Pistachio Mini Kunafa Chocolate</h3><div class="price">300 Tk / Piece</div><a class="order" href="https://wa.me/8801531783026?text=Pistachio%20Mini%20Kunafa%20Chocolate" target="_blank">◉ Order</a></div></article>
+<article class="card"><div class="pic"><img src="caramel-pudding.jpg" alt="Caramel Pudding"></div><div class="body"><h3>Caramel Pudding</h3><div class="price">1/2 Kg — 350 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Caramel%20Pudding" target="_blank">◉ Order</a></div></article>
+<article class="card"><div class="pic"><img src="semai-barfi.jpg" alt="Semai Barfi"></div><div class="body"><h3>Semai Barfi</h3><div class="price">1/2 Kg — 400 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Semai%20Barfi" target="_blank">◉ Order</a></div></article>
+<article class="card"><div class="pic"><img src="butter-halwa.jpg" alt="Butter Halwa"></div><div class="body"><h3>Butter Halwa</h3><div class="price">1/2 Kg — 450 Tk</div><a class="order" href="https://wa.me/8801531783026?text=Butter%20Halwa" target="_blank">◉ Order</a></div></article>
+<article class="card"><div class="pic"><span class="badge">CUSTOM</span><img src="custom-chocolate.jpg" alt="Customized Chocolate"></div><div class="body"><h3>Customized Chocolate</h3><div class="price">250 Tk onwards</div><a class="order" href="https://wa.me/8801531783026?text=Customized%20Chocolate" target="_blank">◉ Order</a></div></article>
+</div></div></section>
+
+<section id="bao" class="dark reveal"><div class="wrap feature"><div class="feature-img"><img src="bao-roll-feature.jpg" alt="Bao Bun and Chicken Roll"></div><div><div class="eyebrow">Hot • Crispy • Homemade</div><h2>Bao Bun & <span>Chicken Roll</span></h2><p>Soft bao buns with extra mayonnaise and crispy chicken rolls made fresh for every order.</p><p><b>Bao Bun:</b> 2 pieces box — 160 Tk &nbsp; • &nbsp; <b>Chicken Roll:</b> 30 Tk / piece</p><a class="btn" href="https://wa.me/8801531783026?text=Bao%20Bun%20or%20Chicken%20Roll" target="_blank">◉ Order via WhatsApp</a></div></div></section>
+
+<section id="about" class="wrap reveal"><div class="stats"><div class="stat"><b>100%</b><span>Homemade</span></div><div class="stat"><b>Fresh</b><span>Made to Order</span></div><div class="stat"><b>Fast</b><span>WhatsApp Ordering</span></div><div class="stat"><b>♡</b><span>Made With Love</span></div></div></section>
+
+<section id="contact" class="contact"><div class="wrap contact-row"><div><div class="eyebrow">Place Your Order Now</div><h2>Good Food Brings People Together</h2></div><div><small>Order via WhatsApp</small><br><a class="phone" href="https://wa.me/8801531783026" target="_blank">01531783026</a></div><a class="btn" href="https://wa.me/8801531783026" target="_blank">WhatsApp Now →</a></div></section>
+</main>
+
+<footer><div class="wrap foot"><div><b>🍔 FOOD <span style="color:#ffc21a">PARK</span></b><br><small>Feel Your Power of Taste</small></div><div class="footlinks"><a href="#home">Home</a><a href="#cakes">Cake</a><a href="#bakery">Bakery</a><a href="#chocolate">Chocolate</a><a href="#bao">Bao Bun & Roll</a></div><small>© 2026 Food Park</small></div></footer>
+<a class="float" href="https://wa.me/8801531783026" target="_blank">◉</a>
+
+<script>
+let i=0,slides=document.querySelectorAll(".slide"),dots=document.querySelectorAll(".dot");
+function go(n){i=(n+slides.length)%slides.length;slides.forEach((s,x)=>s.classList.toggle("active",x===i));dots.forEach((d,x)=>d.classList.toggle("active",x===i))}
+function slide(n){go(i+n)} setInterval(()=>slide(1),5000);
+const ham=document.querySelector(".hamb"),links=document.querySelector(".links");
+ham.onclick=()=>links.classList.toggle("open");
+links.querySelectorAll("a").forEach(a=>a.onclick=()=>links.classList.remove("open"));
+const obs=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("show")),{threshold:.1});
+document.querySelectorAll(".reveal").forEach(x=>obs.observe(x));
+</script>
+</body></html>
