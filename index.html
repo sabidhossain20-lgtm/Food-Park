@@ -1,191 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Food Park — Feel Your Power of Taste</title>
-<meta name="description" content="Food Park — Cakes, Bakery, Chocolate, Bao Bun & Roll. Order directly on WhatsApp.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Food Park</title>
 <style>
-:root{--bg:#090706;--panel:#15100b;--gold:#ffc21a;--gold2:#ff9c00;--text:#fff;--muted:#c9c0b3;--green:#10b957;--line:#674708}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,92%);margin:auto}
-
-/* HEADER */
-header{position:sticky;top:0;z-index:50;background:rgba(7,6,5,.94);backdrop-filter:blur(14px);border-bottom:1px solid #4c3508}
-.nav{min-height:78px;display:flex;align-items:center;gap:28px}
-.brand{display:flex;align-items:center;gap:11px;margin-right:auto}
-.brand-mark{width:48px;height:48px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:24px;background:#111;box-shadow:0 0 22px rgba(255,194,26,.12)}
-.brand strong{font-size:25px;letter-spacing:-.5px}.brand strong span{color:var(--gold)}
-.brand small{display:block;color:#cfc4b5;font-size:10px;margin-top:-2px}
-.links{display:flex;gap:24px}
-.links a{font-size:14px;font-weight:800}.links a:hover{color:var(--gold)}
-.wa{background:var(--green);padding:11px 17px;border-radius:13px;font-weight:800;line-height:1.15;white-space:nowrap}
-.wa small{font-size:12px}.hamb{display:none;font-size:27px}
-
-/* HERO */
-.hero{position:relative;min-height:590px;overflow:hidden;background:#080604}
-.hero-track{position:absolute;inset:0;display:flex;width:300%;animation:heroSlide 18s infinite}
-.hero-slide{width:33.333%;position:relative;flex:none}
-.hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
-.hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.46) 46%,rgba(0,0,0,.08))}
-@keyframes heroSlide{0%,28%{transform:translateX(0)}33%,61%{transform:translateX(-33.333%)}66%,94%{transform:translateX(-66.666%)}100%{transform:translateX(0)}}
-.hero-content{position:relative;z-index:2;min-height:590px;display:flex;align-items:center}
-.hero-copy{max-width:590px}
-.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px;margin-bottom:12px}
-.hero h1{font-family:"Playfair Display",serif;font-size:clamp(44px,6vw,78px);line-height:.98;margin-bottom:20px}
-.hero h1 span{color:var(--gold)}
-.hero p{max-width:530px;color:#eee;line-height:1.75;margin-bottom:27px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn,.order{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;border-radius:28px}
-.btn{padding:14px 23px}.btn.gold,.order{background:var(--gold);color:#111}.btn.dark{border:1px solid #fff;background:rgba(0,0,0,.28)}
-.dots{display:flex;gap:7px;margin-top:25px}.dots i{width:9px;height:9px;border-radius:50%;background:#fff8}.dots i:first-child{background:var(--gold)}
-
-/* SECTIONS */
-section{padding:78px 0}
-.section-head{text-align:center;margin-bottom:38px}
-.section-head h2{font-family:"Playfair Display",serif;font-size:clamp(35px,4vw,52px)}
-.section-head p{color:var(--muted);margin-top:8px}
-
-/* CATEGORY */
-.categories{background:radial-gradient(circle at 50% 0,#211607,#0c0907 60%)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#17100b,#0e0b08);box-shadow:0 18px 50px rgba(0,0,0,.28);transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:#a67510}
-.card-img{height:225px;position:relative;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:.45s}
-.card:hover .card-img img{transform:scale(1.08)}
-.card-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.35))}
-.paint{position:absolute;inset:12px;border:2px solid rgba(255,194,26,.45);border-radius:45% 38% 48% 42%;pointer-events:none;z-index:2}
-.card-body{padding:18px}.card h3{font-family:"Playfair Display",serif;font-size:25px}
-.card p{color:#aaa;margin:6px 0 16px}
-.order{padding:10px 16px;font-size:13px}
-
-/* PRODUCTS */
-.products{background:#080706}
-.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product .card-img{height:250px}
-.product .card-body{padding:18px}
-.price{color:var(--gold);font-size:18px;font-weight:800;margin:8px 0 14px}
-.product-tag{position:absolute;top:13px;left:13px;z-index:3;background:#111c;color:#fff;border:1px solid #ffffff44;padding:6px 10px;border-radius:18px;font-size:11px;font-weight:800}
-
-/* FEATURE BANNER */
-.banner{margin-top:48px;border:1px solid #634508;border-radius:22px;overflow:hidden;background:linear-gradient(100deg,#211608,#0e0d0b);display:flex;align-items:center}
-.banner img{width:43%;height:210px;object-fit:cover}
-.banner-copy{padding:28px}.banner h3{font-family:"Playfair Display",serif;font-size:34px}.banner p{color:#bbb;margin:9px 0 18px;line-height:1.6}
-
-/* ORDER */
-.order-section{background:radial-gradient(circle at center,#241805,#090706 62%);text-align:center}
-.order-box{border:1px solid #674a0a;border-radius:25px;padding:55px 25px;box-shadow:inset 0 0 80px rgba(255,171,0,.03)}
-.order-box h2{font-family:"Playfair Display",serif;font-size:clamp(35px,5vw,50px)}
-.order-box p{color:#cfc7b8;margin:10px 0 25px}
-.big-wa{display:inline-flex;background:var(--green);padding:16px 28px;border-radius:32px;font-size:18px;font-weight:800}
-
-/* FOOTER */
-.footer{padding:48px 0 24px;border-top:1px solid #3d2c09;background:#050504}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
-.footer h4{color:var(--gold);margin-bottom:13px}.footer p,.footer a{color:#aaa;line-height:1.85;font-size:14px;display:block}
-.copy{margin-top:34px;padding-top:18px;border-top:1px solid #29220f;color:#777;text-align:center;font-size:13px}
-
-@media(max-width:950px){
- .links{display:none}.hamb{display:block}.nav{gap:12px}.wa{margin-left:auto}
- .grid4{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}
- .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
- .nav{min-height:70px}.brand strong{font-size:20px}.brand-mark{width:42px;height:42px}.wa{font-size:11px;padding:9px 11px}
- .hero,.hero-content{min-height:610px}.hero-slide img{object-position:65% center}.hero h1{font-size:48px}
- .hero-copy{padding-top:40px}.grid4,.product-grid,.footer-grid{grid-template-columns:1fr}
- .section-head h2{font-size:36px}.banner{display:block}.banner img{width:100%;height:200px}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div class="container nav">
-<a class="brand" href="#home"><div class="brand-mark">🍔</div><div><strong>FOOD <span>PARK</span></strong><small>Feel Your Power of Taste</small></div></a>
-<nav class="links">
-<a href="#home">Home</a><a href="#cake">Cake</a><a href="#bakery">Bakery</a><a href="#chocolate">Chocolate</a><a href="#bao">Bao Bun & Roll</a><a href="#about">About</a><a href="#contact">Contact</a>
-</nav>
-<a class="wa" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20place%20an%20order." target="_blank">☘ Order on WhatsApp<br><small>01531783026</small></a>
-<span class="hamb">☰</span>
-</div>
-</header>
-
-<main id="home">
-<section class="hero">
-<div class="hero-track">
-<div class="hero-slide"><img src="hero-cake.jpg" alt="Food Park cake"></div>
-<div class="hero-slide"><img src="hero-chocolate.jpg" alt="Food Park chocolate"></div>
-<div class="hero-slide"><img src="hero-bakery.jpg" alt="Food Park bakery"></div>
-</div>
-<div class="container hero-content">
-<div class="hero-copy">
-<div class="eyebrow">Fresh • Tasty • Homemade</div>
-<h1>Delicious Food <span>for Every Mood</span></h1>
-<p>Cakes, bakery, chocolates, bao bun & rolls — all in one place. Choose your favorite and place your order directly through WhatsApp.</p>
-<div class="buttons">
-<a class="btn gold" href="#products">🛒 Place Order</a>
-<a class="btn dark" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20place%20an%20order." target="_blank">◉ WhatsApp</a>
-</div>
-<div class="dots"><i></i><i></i><i></i></div>
-</div>
-</div>
-</section>
-
-<section class="categories" id="menu">
-<div class="container">
-<div class="section-head"><div class="eyebrow">Our Categories</div><h2>Explore Our Delicious World</h2><p>Freshly made. Perfectly baked. Just for you.</p></div>
-<div class="grid4">
-
-<article class="card" id="cake"><div class="card-img"><img src="category-cakes.jpg" alt="Cakes"><i class="paint"></i></div><div class="card-body"><h3>Cakes</h3><p>For every celebration</p><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20order%20a%20Cake." target="_blank">Place Order →</a></div></article>
-
-<article class="card" id="bakery"><div class="card-img"><img src="category-bakery.jpg" alt="Bakery items"><i class="paint"></i></div><div class="card-body"><h3>Bakery</h3><p>Freshly baked daily</p><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20order%20a%20Bakery%20item." target="_blank">Place Order →</a></div></article>
-
-<article class="card" id="chocolate"><div class="card-img"><img src="category-chocolate.jpg" alt="Chocolate"><i class="paint"></i></div><div class="card-body"><h3>Chocolate</h3><p>Pure indulgence</p><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20order%20Chocolate." target="_blank">Place Order →</a></div></article>
-
-<article class="card" id="bao"><div class="card-img"><img src="category-bao.jpg" alt="Bao Bun and Roll"><i class="paint"></i></div><div class="card-body"><h3>Bao Bun & Roll</h3><p>Soft • Tasty • Fresh</p><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20order%20Bao%20Bun%20or%20Roll." target="_blank">Place Order →</a></div></article>
-
-</div></div>
-</section>
-
-<section class="products" id="products">
-<div class="container">
-<div class="section-head"><div class="eyebrow">Customer Favorites</div><h2>Place Your Order</h2><p>Beautiful food photos • Simple WhatsApp ordering</p></div>
-<div class="product-grid">
-
-<article class="card product"><div class="card-img"><span class="product-tag">POPULAR</span><img src="bao-bun.jpg" alt="Homemade Bao Bun"></div><div class="card-body"><h3>Homemade Bao Bun</h3><div class="price">৳80</div><a class="order" href="https://wa.me/8801531783026?text=I%20want%20to%20order%20Homemade%20Bao%20Bun%20-%20Tk%2080." target="_blank">🛒 Place Order</a></div></article>
-
-<article class="card product"><div class="card-img"><span class="product-tag">CRISPY</span><img src="chicken-roll.jpg" alt="Chicken Roll"></div><div class="card-body"><h3>Crispy Chicken Roll</h3><div class="price">৳30 / piece</div><a class="order" href="https://wa.me/8801531783026?text=I%20want%20to%20order%20Chicken%20Roll%20-%20Tk%2030%20per%20piece." target="_blank">🛒 Place Order</a></div></article>
-
-<article class="card product"><div class="card-img"><span class="product-tag">SPECIAL</span><img src="pistachio-kunafa-cake.jpg" alt="Pistachio Kunafa Cake"></div><div class="card-body"><h3>Pistachio Kunafa Cake</h3><div class="price">Ask for current price</div><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20please%20send%20the%20current%20price%20for%20Pistachio%20Kunafa%20Cake." target="_blank">🛒 Ask Price</a></div></article>
-
-<article class="card product"><div class="card-img"><span class="product-tag">SWEET</span><img src="bombay-halwa.jpg" alt="Bombay Halwa"></div><div class="card-body"><h3>Bombay Halwa</h3><div class="price">Ask for current price</div><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20please%20send%20the%20current%20price%20for%20Bombay%20Halwa." target="_blank">🛒 Ask Price</a></div></article>
-
-</div>
-
-<div class="banner"><img src="bao-roll-feature.jpg" alt="Bao Bun and Roll"><div class="banner-copy"><h3>Hungry? Let's make it easy.</h3><p>Tap Place Order and WhatsApp will open automatically with the product name.</p><a class="order" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20place%20an%20order." target="_blank">Place Order on WhatsApp →</a></div></div>
-</div>
-</section>
-
-<section class="order-section" id="about">
-<div class="container"><div class="order-box"><div class="eyebrow">Food Park</div><h2>Good Food. Happy People.</h2><p>Fresh ingredients, homemade taste and fast service — all from one place.</p><a class="big-wa" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20place%20an%20order." target="_blank">☘ Place Your Order — 01531783026</a></div></div>
-</section>
-</main>
-
-<footer class="footer" id="contact">
-<div class="container"><div class="footer-grid">
-<div><div class="brand"><div class="brand-mark">🍔</div><div><strong>FOOD <span>PARK</span></strong><small>Feel Your Power of Taste</small></div></div><p style="margin-top:15px">Cakes, bakery, chocolate, bao bun & rolls — made with care.</p></div>
-<div><h4>Quick Links</h4><a href="#home">Home</a><a href="#cake">Cake</a><a href="#bakery">Bakery</a><a href="#chocolate">Chocolate</a></div>
-<div><h4>Order</h4><a href="https://wa.me/8801531783026" target="_blank">WhatsApp</a><a href="#products">Products</a><a href="#menu">Categories</a></div>
-<div><h4>Contact</h4><p>WhatsApp: 01531783026</p><p>Bangladesh</p></div>
-</div><div class="copy">© 2026 Food Park. All rights reserved.</div></div>
-</footer>
-</body>
-</html>
+:root{--g:#ffc21a;--bg:#100906;--card:#1d1009;--wa:#12b957}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}a{text-decoration:none;color:inherit}.nav{position:sticky;top:0;z-index:9;display:flex;align-items:center;justify-content:space-between;padding:12px 4%;background:#080503ed;border-bottom:1px solid #ffc21a55;backdrop-filter:blur(10px)}.logo{font-size:24px;font-weight:900}.logo span{color:var(--g)}.navlinks{display:flex;gap:22px;font-weight:700}.navlinks a:hover{color:var(--g)}.wa{background:var(--wa);padding:11px 16px;border-radius:12px;font-weight:800}.hero{min-height:520px;display:flex;align-items:center;padding:55px 6%;position:relative;overflow:hidden;background:linear-gradient(90deg,#0d0704 0%,#0d0704cc 45%,#0d070422),url('chocolate-cake.jpg') center/cover}.hero div{max-width:620px;position:relative;z-index:2;animation:up .8s}.hero h1{font-size:clamp(45px,6vw,78px);line-height:.95;margin:12px 0}.hero h1 span{color:var(--g)}.hero p{color:#e8dacb;line-height:1.6;font-size:18px}.btn,.add{border:0;background:var(--g);color:#17100a;padding:13px 22px;border-radius:999px;font-weight:900;cursor:pointer;transition:.25s}.btn:hover,.add:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 12px 30px #ffc21a33}.section{padding:65px 5%;border-top:1px solid #ffc21a2b}.title{text-align:center;margin-bottom:30px}.title small{color:var(--g);font-weight:900;letter-spacing:2px}.title h2{font-size:40px;margin:8px}.title p{color:#cdbdaa}.cats,.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.cat,.product{background:linear-gradient(145deg,#24140b,#120b07);border:1px solid #ffc21a66;border-radius:20px;overflow:hidden;transition:.35s}.cat:hover,.product:hover{transform:translateY(-9px);box-shadow:0 20px 45px #0008}.cat img,.product img{width:100%;height:210px;object-fit:cover;display:block;transition:.5s}.cat:hover img,.product:hover img{transform:scale(1.07)}.body{padding:16px}.body h3{margin:0 0 7px}.body p{color:#cdbdaa}.product .body{padding:15px}.price{color:var(--g);font-size:19px;font-weight:900;margin:12px 0}.add{width:100%;border-radius:10px}.reveal{opacity:0;transform:translateY(30px);transition:.7s}.reveal.show{opacity:1;transform:none}.cartfab{position:fixed;right:22px;bottom:22px;z-index:20;width:62px;height:62px;border:0;border-radius:50%;background:var(--g);font-size:24px;cursor:pointer;box-shadow:0 12px 30px #0008}.count{position:absolute;right:0;top:0;background:#e22;color:#fff;border-radius:50%;min-width:22px;height:22px;font-size:12px;display:grid;place-items:center}.shade{position:fixed;inset:0;background:#0009;z-index:29;opacity:0;pointer-events:none;transition:.3s}.shade.open{opacity:1;pointer-events:auto}.cart{position:fixed;right:0;top:0;height:100%;width:min(430px,94vw);background:#fff;color:#20140c;z-index:30;transform:translateX(100%);transition:.35s;display:flex;flex-direction:column}.cart.open{transform:none}.chead{padding:20px;border-bottom:1px solid #ddd;display:flex;justify-content:space-between}.chead button{border:0;border-radius:50%;width:34px;height:34px}.items{padding:15px;overflow:auto;flex:1}.item{display:grid;grid-template-columns:60px 1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid #eee;align-items:center}.item img{width:60px;height:60px;object-fit:cover;border-radius:10px}.qty{display:flex;gap:6px;align-items:center}.qty button{border:0;width:27px;height:27px;border-radius:7px}.foot{padding:18px;border-top:1px solid #ddd}.total{display:flex;justify-content:space-between;font-size:21px;font-weight:900;margin-bottom:12px}.order{width:100%;padding:14px;border:0;border-radius:11px;background:var(--wa);color:#fff;font-weight:900;cursor:pointer}footer{padding:30px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;border-top:1px solid #ffc21a33}@keyframes up{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}@media(max-width:900px){.navlinks{display:none}.cats,.products{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.cats,.products{grid-template-columns:1fr}.hero{min-height:580px}.wa{font-size:12px}.title h2{font-size:32px}}
+</style></head><body>
+<header class="nav"><a class="logo" href="#home">FOOD <span>PARK</span></a><nav class="navlinks"><a href="#home">Home</a><a href="#cakes">Cake</a><a href="#bakery">Bakery</a><a href="#chocolate">Chocolate</a><a href="#bao">Bao Bun & Roll</a></nav><a class="wa" target="_blank" href="https://wa.me/8801531783026?text=Hello%20Food%20Park%2C%20I%20want%20to%20order.">Order on WhatsApp<br>01531783026</a></header>
+<section class="hero" id="home"><div><b style="color:#ffc21a">Fresh • Tasty • Homemade</b><h1>Delicious Food<br><span>for Every Mood</span></h1><p>Cakes, Bakery, Chocolates, Bao Bun & Rolls — all in one place.</p><button class="btn" onclick="document.querySelector('#cakes').scrollIntoView()">🛒 Order Now</button></div></section>
+<section class="section reveal"><div class="title"><small>OUR MENU</small><h2>Choose Your Favorite</h2><p>Freshly made. Perfectly prepared. Just for you.</p></div><div class="cats">
+<a class="cat" href="#cakes"><img src="category-cakes.jpg"><div class="body"><h3>🍰 Cakes</h3><p>For every celebration</p></div></a>
+<a class="cat" href="#bakery"><img src="category-bakery.jpg"><div class="body"><h3>🥐 Bakery</h3><p>Freshly baked daily</p></div></a>
+<a class="cat" href="#chocolate"><img src="category-chocolate.jpg"><div class="body"><h3>🍫 Chocolate</h3><p>Pure indulgence</p></div></a>
+<a class="cat" href="#bao"><img src="bao-bun.jpg"><div class="body"><h3>🥟 Bao Bun & Roll</h3><p>Soft • Tasty • Fresh</p></div></a></div></section>
+<div id="cakes"></div><section class="section reveal"><div class="title"><small>CAKES</small><h2>Sweet Moments</h2></div><div class="products">
+<div class="product"><img src="vanilla-cake.jpg"><div class="body"><h3>Vanilla Cake</h3><div class="price">৳550 / Pound</div><button class="add" onclick="add('Vanilla Cake',550,'vanilla-cake.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="chocolate-cake.jpg"><div class="body"><h3>Chocolate Cake</h3><div class="price">৳650 / Pound</div><button class="add" onclick="add('Chocolate Cake',650,'chocolate-cake.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="dream-cake.jpg"><div class="body"><h3>Dream Cake</h3><div class="price">৳250 / 500ml</div><button class="add" onclick="add('Dream Cake',250,'dream-cake.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="pistachio-kunafa-cake.jpg"><div class="body"><h3>Pistachio Kunafa Cake</h3><div class="price">৳500 / 500ml</div><button class="add" onclick="add('Pistachio Kunafa Cake',500,'pistachio-kunafa-cake.jpg')">🛒 Add to Cart</button></div></div></div></section>
+<div id="bakery"></div><section class="section reveal"><div class="title"><small>BAKERY</small><h2>Freshly Baked</h2></div><div class="products">
+<div class="product"><img src="bombay-halawa.jpg"><div class="body"><h3>Bombay Halwa</h3><div class="price">৳450 / 1/2 Kg</div><button class="add" onclick="add('Bombay Halwa',450,'bombay-halawa.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="mini-pizza.jpg"><div class="body"><h3>Mini Pizza</h3><div class="price">৳100 / Piece</div><button class="add" onclick="add('Mini Pizza',100,'mini-pizza.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="bao-bun.jpg"><div class="body"><h3>Classic Bao Bun</h3><div class="price">৳160 / 2 Pieces</div><button class="add" onclick="add('Classic Bao Bun',160,'bao-bun.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="chicken-roll.jpg"><div class="body"><h3>Chicken Roll</h3><div class="price">৳30 / Piece</div><button class="add" onclick="add('Chicken Roll',30,'chicken-roll.jpg')">🛒 Add to Cart</button></div></div></div></section>
+<div id="chocolate"></div><section class="section reveal"><div class="title"><small>CHOCOLATE</small><h2>Pure Chocolate Happiness</h2></div><div class="products">
+<div class="product"><img src="pistachio-mini-kunafa.jpg"><div class="body"><h3>Pistachio Mini Kunafa Chocolate</h3><div class="price">৳300 / Piece</div><button class="add" onclick="add('Pistachio Mini Kunafa Chocolate',300,'pistachio-mini-kunafa.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="caramel-pudding.jpg"><div class="body"><h3>Caramel Pudding</h3><div class="price">৳350 / 1/2 Kg</div><button class="add" onclick="add('Caramel Pudding',350,'caramel-pudding.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="semai-barfi.jpg"><div class="body"><h3>Semai Barfi</h3><div class="price">৳400 / 1/2 Kg</div><button class="add" onclick="add('Semai Barfi',400,'semai-barfi.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="butter-halwar.jpg"><div class="body"><h3>Butter Halwa</h3><div class="price">৳450 / 1/2 Kg</div><button class="add" onclick="add('Butter Halwa',450,'butter-halwar.jpg')">🛒 Add to Cart</button></div></div></div></section>
+<div id="bao"></div><section class="section reveal"><div class="title"><small>BAO BUN & ROLL</small><h2>Correct Food Images</h2><p>Bao Bun stays Bao Bun, Chicken Roll stays Chicken Roll.</p></div><div class="products">
+<div class="product"><img src="bao-bun.jpg"><div class="body"><h3>Classic Bao Bun</h3><div class="price">৳160 / 2 Pieces</div><button class="add" onclick="add('Classic Bao Bun',160,'bao-bun.jpg')">🛒 Add to Cart</button></div></div>
+<div class="product"><img src="chicken-roll.jpg"><div class="body"><h3>Chicken Roll</h3><div class="price">৳30 / Piece</div><button class="add" onclick="add('Chicken Roll',30,'chicken-roll.jpg')">🛒 Add to Cart</button></div></div></div></section>
+<footer><b>FOOD <span style="color:#ffc21a">PARK</span></b><span>WhatsApp: 01531783026</span><span>© 2026 Food Park</span></footer>
+<button class="cartfab" onclick="openCart()">🛒<span class="count" id="count">0</span></button><div class="shade" id="shade" onclick="closeCart()"></div>
+<aside class="cart" id="cart"><div class="chead"><h2>Your Order</h2><button onclick="closeCart()">✕</button></div><div class="items" id="items"></div><div class="foot"><div class="total"><span>Total</span><span id="total">৳0</span></div><button class="order" onclick="placeOrder()">📲 Place Order on WhatsApp</button></div></aside>
+<script>
+let cart=JSON.parse(localStorage.getItem('foodParkCart')||'[]'),WA='8801531783026';
+function save(){localStorage.setItem('foodParkCart',JSON.stringify(cart));render()}
+function add(n,p,i){let x=cart.find(a=>a.n===n);x?x.q++:cart.push({n,p,i,q:1});save();openCart()}
+function qty(n,d){let x=cart.find(a=>a.n===n);if(x){x.q+=d;if(x.q<1)cart=cart.filter(a=>a.n!==n)}save()}
+function render(){let box=document.getElementById('items'),c=cart.reduce((s,x)=>s+x.q,0),t=cart.reduce((s,x)=>s+x.p*x.q,0);document.getElementById('count').textContent=c;document.getElementById('total').textContent='৳'+t;if(!cart.length){box.innerHTML='<p style="text-align:center;color:#777;padding:50px 10px">Your cart is empty 😋</p>';return}box.innerHTML=cart.map(x=>`<div class="item"><img src="${x.i}"><div><b>${x.n}</b><br>৳${x.p} × ${x.q}</div><div class="qty"><button onclick="qty('${x.n}',-1)">−</button>${x.q}<button onclick="qty('${x.n}',1)">+</button></div></div>`).join('')}
+function openCart(){cartEl.classList.add('open');shade.classList.add('open')}function closeCart(){cartEl.classList.remove('open');shade.classList.remove('open')}
+function placeOrder(){if(!cart.length){alert('Please add an item first.');return}let t=cart.reduce((s,x)=>s+x.p*x.q,0),m=['🍔 FOOD PARK ORDER','','Order Summary:'];cart.forEach(x=>m.push('• '+x.n+' × '+x.q+' = ৳'+x.p*x.q));m.push('','Total: ৳'+t,'','Please confirm my order.');window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(m.join('\n')),'_blank')}
+const cartEl=document.getElementById('cart'),shade=document.getElementById('shade');render();
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script></body></html>
